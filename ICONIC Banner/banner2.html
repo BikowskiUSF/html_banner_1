@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Website Banner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="banner">
+    <div class="column1">
+      <img src="https://cdn.shopify.com/s/files/1/0606/9714/9634/files/Column_1_REV_2.png?v=1680049887" alt="Triangle 1">
+      <a href="https://clutchicons.com/all-icons"><button>Shop Now</button></a>
+    </div>
+    <div class="column2">
+      <img src="https://cdn.shopify.com/s/files/1/0606/9714/9634/files/TOUCH_GREATNESS.png?v=1680049979" alt="Logo" class="logo" id="logo">
+      <video src="https://cdn.shopify.com/videos/c/o/v/eeb0a0a27b694f31bfae5dcda87d73e2.mp4" loop muted autoplay playsinline id="video"></video>
+    </div>
+    <div class="column3">
+      <img src="https://cdn.shopify.com/s/files/1/0606/9714/9634/files/Column_3_REV2.png?v=1680049898" alt="Triangle 3">
+<a href="https://clutchicons.com/iconic"><button>Shop Now</button></a>
+    </div>
+  </div>
+  <script>
+const logo = document.querySelector('.logo');
+const column1 = document.querySelector('.column1');
+const column3 = document.querySelector('.column3');
+const video = document.querySelector('video');
+
+logo.addEventListener('mouseover', () => {
+  column1.style.transform = 'translateX(-75%)';
+  column3.style.transform = 'translateX(75%)';
+  video.style.opacity = '1';
+  setTimeout(() => {
+    column1.style.opacity = '1';
+    column3.style.opacity = '1';
+  }, 500);
+});
+
+logo.addEventListener('mouseout', () => {
+  column1.style.transform = 'translateX(0)';
+  column3.style.transform = 'translateX(0)';
+  video.style.opacity = '0';
+  video.currentTime = 0;
+  column1.style.opacity = '1';
+  column3.style.opacity = '1';
+});
+
+	</script>
+</body>
+</html>

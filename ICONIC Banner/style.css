@@ -1,0 +1,115 @@
+.banner {
+  position: relative;
+  width: 100%;
+  height: calc(100vw * 5 / 21);
+  overflow: hidden;
+}
+
+.column1,
+.column3 {
+  position: absolute;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  z-index: 1;
+  transition: transform 0.5s ease-in-out;
+}
+
+.column1 {
+  left: 0;
+  transform: translateX(0);
+}
+
+.column3 {
+  right: 0;
+  transform: translateX(0);
+}
+
+.column2 {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.logo {
+  max-width: 50%;
+  max-height: 75%;
+  z-index: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.column1 img,
+.column3 img {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 1;
+}
+
+.column1 img {
+  left: -15%;
+}
+
+.column3 img {
+  right: -15%;
+}
+
+.column1 button,
+.column3 button {
+	position: absolute;
+	white-space: nowrap;
+	left:50%;
+	transform: translateX(-50%);
+	bottom: 10%;
+	z-index: 3;
+	margin: 0 auto;
+	align-items: right;
+    color: #ffffff;
+    background-color: #000000;
+    font-size: 15px;
+    border: 2px solid #858585;
+    padding: 15px 15px;
+    cursor: pointer;
+}
+@media screen and (max-width: 480px) {
+  .column1 button,
+  .column3 button {
+    padding: 5px;
+  }
+	
+        }
+.column1 button:hover,
+.column3 button:hover {
+  transform: scale(1.05) translateX(-50%);
+}
+
+.logo:hover {
+  opacity: 0.15;
+}
+
+.logo:hover ~ .column1 {
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-75%);
+}
+
+.logo:hover ~ .column3 {
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(75%);
+}
+
+#video {
+  position: absolute;
+  top: 0;
+  left: -55%;
+  width: 210%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  pointer-events: none;
+}
